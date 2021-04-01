@@ -9,8 +9,8 @@ class SettingController extends Controller
 {
     public function getConnect(){
 
-        $client_id = fopen("../public/storage/client_id.txt","r");
-        
+        $client_id = fopen("../public/client_id.txt","r");
+    
         
         $client_id = fgets($client_id);
        
