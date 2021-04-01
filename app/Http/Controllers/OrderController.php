@@ -10,10 +10,10 @@ class OrderController extends Controller
 {
     public function getOrder()
     {
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer  = fgets($retailer);
         //Hóa đơn
         $orderResponse = Http::withHeaders(
@@ -64,12 +64,11 @@ class OrderController extends Controller
     }
     public function postCreateOd(Request $request)
     {
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer  = fgets($retailer);
-        $test = 'Huyện Châu Thành';
         $response = Http::withHeaders([
             'Retailer' => $retailer,
             'Authorization'=>'Bearer '.$access_token,
@@ -81,7 +80,7 @@ class OrderController extends Controller
                 "Receiver"=>$request->Receiver,
                 "ContactNumber"=>$request->ContactNumber,
                 "Address"=>$request->Address,
-                "LocationName"=>$request->LocationName.' - '.$test,
+                "LocationName"=>$request->LocationName,
                 "WardName"=>$request->WardName,
                 "DeliveryCode"=>$request->DeliveryCode,
                 "PartnerDelivery"=>[
@@ -114,10 +113,10 @@ class OrderController extends Controller
     public function postSelect(Request $request)
     {
         $data = $request->all();
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer  = fgets($retailer);
        
         if($data['action'])
@@ -143,10 +142,10 @@ class OrderController extends Controller
     public function postSelectMn(Request $request)
     {
         $data = $request->all();
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer  = fgets($retailer);
         if($data['action'])
         {

@@ -12,9 +12,9 @@ class ProductController extends Controller
     public function getProduct()
     {
         try{
-            $access_token = fopen("./storage/app/public/access_token.txt", "r");
+            $access_token = fopen("../storage/app/public/access_token.txt", "r");
             $access_token=fgets($access_token);
-            $retailer=fopen("./storage/app/public/retailer.txt", "r");
+            $retailer=fopen("../storage/app/public/retailer.txt", "r");
             $retailer=fgets($retailer);
             $response = Http::withHeaders([
                 'Retailer'=>$retailer,
@@ -32,9 +32,9 @@ class ProductController extends Controller
     }
     public function getProductDetails($id)
     {
-            $access_token = fopen("./storage/app/public/access_token.txt", "r");
+            $access_token = fopen("../storage/app/public/access_token.txt", "r");
             $access_token=fgets($access_token);
-            $retailer=fopen("./storage/app/public/retailer.txt", "r");
+            $retailer=fopen("../storage/app/public/retailer.txt", "r");
             $retailer=fgets($retailer);
             $response = Http::withHeaders([
                 'Retailer'=>$retailer,

@@ -11,11 +11,11 @@ class CategoryController extends Controller
     public function getCategory()
     {
         try{
-            $access_token = fopen("./storage/app/public/access_token.txt","r");
+            $access_token = fopen("../storage/app/public/access_token.txt","r");
             $access_token = fgets($access_token);
             
     
-            $retailer = fopen("./storage/app/public/retailer.txt","r");
+            $retailer = fopen("../storage/app/public/retailer.txt","r");
             $retailer = fgets($retailer);
     
             $response = Http::withHeaders(
@@ -63,10 +63,10 @@ class CategoryController extends Controller
     }
     public function postCreateCategory(Request $request)
     {
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer = fgets($retailer);
 
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
         $response = Http::withHeaders(
@@ -92,10 +92,10 @@ class CategoryController extends Controller
     }
     public function postUpdateCategory(Request $request,$id)
     {
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer = fgets($retailer);
 
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
         $response = Http::withHeaders(
@@ -121,10 +121,10 @@ class CategoryController extends Controller
     }
     public function getDeteleCategory($id)
     {
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer = fgets($retailer);
         
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
         $response = Http::withHeaders(

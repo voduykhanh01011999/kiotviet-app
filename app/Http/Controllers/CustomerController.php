@@ -11,11 +11,11 @@ class CustomerController extends Controller
 {
     public function getCustomer(){
         try{
-            $access_token = fopen("./storage/app/public/access_token.txt","r");
+            $access_token = fopen("../storage/app/public/access_token.txt","r");
             $access_token = fgets($access_token);
             
            
-            $retailer = fopen("./storage/app/public/retailer.txt","r");
+            $retailer = fopen("../storage/app/public/retailer.txt","r");
             $retailer = fgets($retailer);
     
             $response = Http::withHeaders(
@@ -58,10 +58,10 @@ class CustomerController extends Controller
         }
         public function getDetailsCustomer($id)
         {
-            $retailer = fopen("./storage/app/public/retailer.txt","r");
+            $retailer = fopen("../storage/app/public/retailer.txt","r");
             $retailer = fgets($retailer);
             
-            $access_token = fopen("./storage/app/public/access_token.txt","r");
+            $access_token = fopen("../storage/app/public/access_token.txt","r");
             $access_token = fgets($access_token);
             $response = Http::withHeaders([
                 'Retailer' => $retailer,
@@ -83,10 +83,10 @@ class CustomerController extends Controller
         public function postCreateCtm(Request $request)
         {
            
-            $retailer = fopen("./storage/app/public/retailer.txt","r");
+            $retailer = fopen("../storage/app/public/retailer.txt","r");
             $retailer = fgets($retailer);
             
-            $access_token = fopen("./storage/app/public/access_token.txt","r");
+            $access_token = fopen("../storage/app/public/access_token.txt","r");
             $access_token = fgets($access_token);
            
            
@@ -119,10 +119,10 @@ class CustomerController extends Controller
         }
         public function postUpdateCtm(Request $request,$id)
         {
-            $retailer = fopen("./storage/app/public/retailer.txt","r");
+            $retailer = fopen("../storage/app/public/retailer.txt","r");
             $retailer = fgets($retailer);
             
-            $access_token = fopen("./storage/app/public/access_token.txt","r");
+            $access_token = fopen("../storage/app/public/access_token.txt","r");
             $access_token = fgets($access_token);
         
 
@@ -154,10 +154,10 @@ class CustomerController extends Controller
             }
         }
         public function getDeleteCtm($id){
-            $retailer = fopen("./storage/app/public/retailer.txt","r");
+            $retailer = fopen("../storage/app/public/retailer.txt","r");
             $retailer = fgets($retailer);
             
-            $access_token = fopen("./storage/app/public/access_token.txt","r");
+            $access_token = fopen("../storage/app/public/access_token.txt","r");
             $access_token = fgets($access_token);
             
             $response = Http::withHeaders([

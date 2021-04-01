@@ -9,16 +9,16 @@ class SettingController extends Controller
 {
     public function getConnect(){
 
-        $client_id = fopen("./storage/app/public/client_id.txt","r");
+        $client_id = fopen("../storage/app/public/client_id.txt","r");
         $client_id = fgets($client_id);
 
-        $client_secret = fopen("./storage/app/public/client_secret.txt","r");
+        $client_secret = fopen("../storage/app/public/client_secret.txt","r");
         $client_secret = fgets($client_secret);
 
-        $retailer = fopen("./storage/app/public/retailer.txt","r");
+        $retailer = fopen("../storage/app/public/retailer.txt","r");
         $retailer = fgets($retailer);
 
-        $access_token = fopen("./storage/app/public/access_token.txt","r");
+        $access_token = fopen("../storage/app/public/access_token.txt","r");
         $access_token = fgets($access_token);
 
         return view('admin.setting.connect',compact('client_id','client_secret','retailer','access_token'));
