@@ -43,13 +43,13 @@
             <div class="form-group">
                 <label for="">Giới tính</label>
                 <div class="form-check">
-                    <input class="form-check-input" @if($ctm['gender'] == true) checked @endif name="gender" type="radio" id="gridCheck" value="true">
+                    <input class="form-check-input" @if(isset($ctm['gender'])) @if($ctm['gender'] == true) checked @endif @endif name="gender" type="radio" id="gridCheck" value="true">
                     <label class="form-check-label" for="gridCheck">
                         Nam
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" @if($ctm['gender'] == false) checked @endif name="gender" type="radio" id="gridCheck" value="false">
+                    <input class="form-check-input" @if(isset($ctm['gender'])) @if($ctm['gender'] == true) checked @endif @endif name="gender" type="radio" id="gridCheck" value="false">
                     <label class="form-check-label" for="gridCheck">
                         Nữ
                     </label>
@@ -57,7 +57,7 @@
             </div>
             <div class="form-group">
                 <label for="locationName">Nhập khu vực</label>
-                <input type="text" class="form-control" id="locationName" name="locationName" value="{{$ctm['locationName']}}">
+                <input type="text" class="form-control" id="locationName" name="locationName" value="@if(isset($ctm['locationName'])){{$ctm['locationName']}}@endif">
             </div>
             <div class="form-group">
                 <label for="comments">Ghi chú</label>
