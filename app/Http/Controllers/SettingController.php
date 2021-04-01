@@ -9,10 +9,9 @@ class SettingController extends Controller
 {
     public function getConnect(){
 
-        $client_id = fopen("../public/client_id.txt","r");
-    
-        
+        $client_id = fopen("../storage/app/public/client_id.txt","r");
         $client_id = fgets($client_id);
+       
        
         $client_secret = fopen("../storage/app/public/client_secret.txt","r");
         
@@ -55,7 +54,7 @@ class SettingController extends Controller
         $access_token=$update->access_token;
 
         Storage::put('public/retailer.txt',$retailer);
-        Storage::put('public/client_id.txt',$client_id);
+        Storage::put('public/client_id',$client_id);
         Storage::put('public/client_secret.txt',$client_secret);
         Storage::put("public/access_token.txt",$access_token);
         $access_token = fopen(storage_path("app/public/access_token.txt"),"r");
