@@ -9,7 +9,7 @@ class SettingController extends Controller
 {
     public function getConnect(){
 
-        $client_id = fopen("../storage/app/public/client_id.txt","r");
+        $client_id = fopen(storage_path("app/public/client_id.txt"),"r");
         $client_id = fgets($client_id);
 
         $client_secret = fopen("../storage/app/public/client_secret.txt","r");
@@ -55,7 +55,7 @@ class SettingController extends Controller
         Storage::put('public/client_id.txt',$client_id);
         Storage::put('public/client_secret.txt',$client_secret);
         Storage::put("public/access_token.txt",$access_token);
-        //$access_token = fopen(storage_path("app/public/access_token.txt"),"r");
+        $access_token = fopen(storage_path("app/public/access_token.txt"),"r");
         return redirect()->back()->with('thongbao','Kết nối thành công đến cửa hàng');
     }
 }
