@@ -55,11 +55,11 @@
                                                 {{('NULL')}}
                                             @endif
                                             </span></li>
-                                            <li class="list-group-item">Nợ hiện tại: <span class="badge badge-success">{{number_format($details['debt'])}} VNĐ</span></li>
-                                            <li class="list-group-item">Tổng số tiền bán: <span class="badge badge-success">{{number_format($details['totalInvoiced'])}} VNĐ</span></li>
-                                            <li class="list-group-item">Tổng bán trừ trả hàng: <span class="badge badge-success">{{number_format($details['totalRevenue'])}} VNĐ</span></li>
-                                            <li class="list-group-item">Điểm tích lũy: <span class="badge badge-success">{{number_format($details['totalPoint'])}} VNĐ</span></li>
-                                            <li class="list-group-item">Điểm thưởng: <span class="badge badge-success">{{number_format($details['totalPoint'])}} VNĐ</span></li>
+                                            <li class="list-group-item">Nợ hiện tại: <span class="badge badge-success">@if(isset($details['debt'])){{number_format($details['debt'])}}@endif VNĐ</span></li>
+                                            <li class="list-group-item">Tổng số tiền bán: <span class="badge badge-success">@if(isset($details['totalInvoiced'])){{number_format($details['totalInvoiced'])}}@endif VNĐ</span></li>
+                                            <li class="list-group-item">Tổng bán trừ trả hàng: <span class="badge badge-success">@if(isset($details['totalRevenue'])){{number_format($details['totalRevenue'])}}@endif VNĐ</span></li>
+                                            <li class="list-group-item">Điểm tích lũy: <span class="badge badge-success">@if(isset($details['totalPoint'])){{number_format($details['totalPoint'])}}@endif VNĐ</span></li>
+                                            <li class="list-group-item">Điểm thưởng: <span class="badge badge-success">@if(isset($details['totalPoint'])){{number_format($details['totalPoint'])}}@endif VNĐ</span></li>
                                         </ul>
                                  </div>                       
                             </div>
